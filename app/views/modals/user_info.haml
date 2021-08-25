@@ -1,0 +1,151 @@
+#userInfoModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+        %h2#myModalLabel.modal-title Informácie pre klientov
+      .modal-body
+
+
+
+        %ul.nav.nav-pills.client-info
+          %li.second.active
+            %a{"data-toggle" => "pill", :href => "#wifi-taxi"} Nadštandardné služby
+          %li.first
+            %a{"data-toggle" => "pill", :href => "#drugs"} Produkty pre liečenie ortopedických ochorení
+
+        %hr.blue
+
+        .tab-content
+
+          #drugs.tab-pane.fade
+            = haml :"modals/partials/drugs"
+
+          #wifi-taxi.tab-pane.fade.in.active
+            .container
+              .row
+                .col-md-6.col-md-offset-3
+                  %center
+                    %h2 Wifi pripojenie
+              .row#wifi-connection
+                .col-md-5.col-md-offset-1
+                  .display-inline
+                    .title Názov:
+                    .space &nbsp
+                    .name artropro
+                  .display-inline
+                    .title Heslo:
+                    .space &nbsp&nbsp
+                    .name#password ********
+                    / .name &nbsp&nbsp inocode5
+                .col-md-5
+                  %button.btn.btn-pw.btn-lg#show-pw-btn Zobraziť heslo*
+              .row#condition
+                .col-md-10.col-md-offset-1
+                  %center
+                    %h3 * Kliknutím na tlačidlo "Zobraziť heslo", pacient súhlasí s zaúčtovaním sumy 10€ za účelom poskytnutia nadštandardné služby vo forme internetového pripojenia.
+
+            %hr.blue
+
+            .container
+              .row
+                .col-md-6.col-md-offset-3
+                  %center
+                    %h2 Zaobstaranie taxi služby
+              .row
+                .col-md-5.col-md-offset-1
+                  .column1
+
+                    .bs-callout.bs-callout-info
+                      .text
+                        %h3
+                          %b k2taxi
+                      %ul.number-list
+                        %li
+                          0907 06 22 77
+                        %li
+                          0903 45 48 20
+                      %br
+
+                .col-md-5
+                  .column2
+                    .bs-callout.bs-callout-info
+                      .text
+                        %h3
+                          %b GP-Taxi
+                      %ul.number-list
+                        %li
+                          0910 944 751
+                        %li
+                          0944 012 090
+
+                      %br
+
+              .row
+                .col-md-5.col-md-offset-1
+                  .column1
+                    .bs-callout.bs-callout-info
+                      .text
+                        %h3
+                          %b MB Taxi
+                      %ul.number-list
+                        %li
+                          0908 248 200
+                        %li
+                          0903 825 646
+                      %br
+
+                .col-md-5
+                  .column2
+                    .bs-callout.bs-callout-info
+                      .text
+                        %h3
+                          %b Alpha
+                      %ul.number-list
+                        %li
+                          0902 345 600
+                        %li
+                          0908 042 082
+                      %br
+
+              .row
+                .col-md-5.col-md-offset-1
+                  .column1
+                    .bs-callout.bs-callout-info
+                      .text
+                        %h3
+                          %b EUROPE Taxi
+                      %ul.number-list
+                        %li
+                          0902 366 377
+                        %li
+                          0908 559 903
+
+                      %br
+
+                .col-md-5
+                  .column2
+                    .bs-callout.bs-callout-info
+                      .text
+                        %h3
+                          %b MS Taxi
+                      %ul.number-list
+                        %li
+                          0902 108 108
+                        %li
+                          0908 108 108
+                      %br
+
+              .row
+                .col-md-10.col-md-offset-1
+                  %center
+                    %h3 Na pacientovo vyžiadanie bude k jeho odvoz zaobstaraná taxi služba, ktorá mu bude k dispozícií po vykonaní procedúry. Táto služba bude pacientovy zaúčtovaná sumou 10€ za účelom poskytnutia nadštandardné služby.
+
+
+
+
+
+
+      .modal-footer
+        %button.btn.btn-lg.btn-close{"data-dismiss" => "modal", :type => "button"} Zavrieť
+
