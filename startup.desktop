@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name="kiosk_startup"
+Type=Application
+Exec=/home/kiosk/startup.sh
+Hidden=false
+X-Gnome-Autostart=true
+Terminal=false

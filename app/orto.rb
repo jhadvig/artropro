@@ -8,32 +8,33 @@ class Orto < Sinatra::Base
     scss(:"/css/#{params[:name]}")
   end
 
+  
   get '/' do
     haml :index
   end
 
   post '/submit_feedback' do
 
-    begin
-      api_key = File.open('/etc/mailgun_passwd').read.chop
+    # begin
+    #   api_key = File.open('/etc/mailgun_passwd').read.chop
 
-      RestClient.post api_key,
-      :from => "#{params['email'].match(/^[^@]*/i).to_s} <#{params['email']}>",
-      :to => "petriscak@artropro.sk",
-      :subject => "Feedback - #{params['name']}",
-      :text => "Ošetrujúci lekár(ka): #{get_doctor(params['doctor'])} \n" \
-                "Spokojnosť s personálom : #{get_quality(params['quality'])} \n" \
-                "Text :\n#{params['feedback']}"
+    #   RestClient.post api_key,
+    #   :from => "#{params['email'].match(/^[^@]*/i).to_s} <#{params['email']}>",
+    #   :to => "petriscak@artropro.sk",
+    #   :subject => "Feedback - #{params['name']}",
+    #   :text => "Ošetrujúci lekár(ka): #{get_doctor(params['doctor'])} \n" \
+    #             "Spokojnosť s personálom : #{get_quality(params['quality'])} \n" \
+    #             "Text :\n#{params['feedback']}"
 
-    rescue => e
-      File.open('/tmp/kiosk.log','a+') {|f| f.write("#{e} \n\n\n")}
+    # rescue => e
+    #   File.open('/tmp/kiosk.log','a+') {|f| f.write("#{e} \n\n\n")}
 
-      # RestClient.post api_key,
-      # :from => "#{params['email'].match(/^[^@]*/i).to_s} <#{params['email']}>",
-      # :to => "htmtrade2@gmail.com",
-      # :subject => "Ortotech - Panel exception",
-      # :text => "#{e} \n\n Params: #{params}"
-    end
+    #   # RestClient.post api_key,
+    #   # :from => "#{params['email'].match(/^[^@]*/i).to_s} <#{params['email']}>",
+    #   # :to => "htmtrade2@gmail.com",
+    #   # :subject => "Ortotech - Panel exception",
+    #   # :text => "#{e} \n\n Params: #{params}"
+    # end
 
     redirect '/'
   end

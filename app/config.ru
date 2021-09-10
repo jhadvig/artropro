@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler'
-Bundler.require
+# Bundler.require
 
 require './orto.rb'
 run Orto

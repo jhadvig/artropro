@@ -1,0 +1,1 @@
+0 */1 * * 1-5 /home/kiosk/cron-kiosk-update.sh
